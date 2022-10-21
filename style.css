@@ -1,0 +1,13 @@
+#box {
+    background-color: white;
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+div {
+    border: 1px solid black;
+    min-width: 16px;
+    min-height: 16px;
+    display: inline-block;
+}
