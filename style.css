@@ -5,9 +5,13 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
-div {
+.grid-element {
     border: 1px solid black;
     min-width: 16px;
     min-height: 16px;
     display: inline-block;
+}
+
+.clicked {
+    background-color: red;
 }
