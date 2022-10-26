@@ -1,14 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #box {
     background-color: white;
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
+    width: 960px;
+    height: 960px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid-size, #clear-button {
+    padding: 32px;
+    margin: 50px;
+    max-width: 200px;
 }
 
 .grid-element {
     border: 1px solid black;
-    min-width: 16px;
-    min-height: 16px;
+    min-width: 1px;
+    min-height: 1px;
     display: inline-block;
 }
 

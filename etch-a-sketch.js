@@ -1,18 +1,38 @@
 const box = document.getElementById("box");
-let cell;
+const size = document.getElementById("grid-size");
+const changeBackgroundColor = e => {e.target.classList.add('clicked');}
 
-function makeGrid(rows, cols) {
-  box.style.setProperty('--grid-rows', rows);
-  box.style.setProperty('--grid-cols', cols);
-  for (i = 0; i < (rows * cols); i++) {
-    cell = document.createElement("div");
+function makeGrid(num) {
+  box.style.setProperty('--grid-rows', num);
+  box.style.setProperty('--grid-cols', num);
+  for (i = 0; i < (num * num); i++) {
+    let cell = document.createElement("div");
+    cell.addEventListener("mouseover", changeBackgroundColor);
     box.appendChild(cell).className = "grid-element";
   };
 };
 
-makeGrid(16, 16);
+function deleteGrid(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+};
 
-let active = document.querySelectorAll(".grid-element");
-const changeBackgroundColor = e => {e.target.classList.add('clicked');}
+function resize() {
+  let size = prompt("Please enter a new grid size. Pick a number between 2 and 100.", 2);
+  if (size > 1 && size < 101) {
+    deleteGrid(box);
+    makeGrid(size);
+    return;
+  }
+  else {
+    return alert("Invalid selection. Please enter a number between 2 and 100.");
+  }
+};
 
-active.forEach(div => {div.addEventListener("mouseover", changeBackgroundColor);}) //change from click
+function clearGrid() {
+  let elements = document.querySelectorAll(".grid-element");
+  elements.forEach(element => element.classList.remove('clicked'));
+};
+
+makeGrid(16);
