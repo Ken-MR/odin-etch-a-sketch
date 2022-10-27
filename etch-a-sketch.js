@@ -1,11 +1,11 @@
 const box = document.getElementById("box");
 const size = document.getElementById("grid-size");
+let color = '#FFFFFF';
 const changeBackgroundColor = e => {e.target.style.backgroundColor = `${color}`;}
 const colorChoice = document.querySelector('#color-choice');
-let color = '#0000000';
 
 colorChoice.addEventListener('input', function () {
-    color = this.value;
+  color = this.value;
 });
 
 function makeGrid(num) {
