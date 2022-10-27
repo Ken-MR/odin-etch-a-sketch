@@ -1,5 +1,6 @@
 const box = document.getElementById("box");
 const size = document.getElementById("grid-size");
+const color = document.getElementById("color");
 const changeBackgroundColor = e => {e.target.classList.add('clicked');}
 
 function makeGrid(num) {
