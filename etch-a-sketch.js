@@ -41,4 +41,8 @@ function clearGrid() {
   elements.forEach(element => element.style.backgroundColor = 'white');
 };
 
+function erase() {
+  color = '#FFFFFF';
+}
+
 makeGrid(16);
