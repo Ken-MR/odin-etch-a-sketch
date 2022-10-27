@@ -1,9 +1,12 @@
 const box = document.getElementById("box");
 const size = document.getElementById("grid-size");
-const color = 'purple';
-//const changeBackgroundColor = e => {e.target.classList.add('clicked');}
-
 const changeBackgroundColor = e => {e.target.style.backgroundColor = `${color}`;}
+const colorChoice = document.querySelector('#color-choice');
+let color = '#0000000';
+
+colorChoice.addEventListener('input', function () {
+    color = this.value;
+});
 
 function makeGrid(num) {
   box.style.setProperty('--grid-rows', num);
