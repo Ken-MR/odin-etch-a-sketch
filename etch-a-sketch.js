@@ -1,7 +1,9 @@
 const box = document.getElementById("box");
 const size = document.getElementById("grid-size");
-const color = document.getElementById("color");
-const changeBackgroundColor = e => {e.target.classList.add('clicked');}
+const color = 'purple';
+//const changeBackgroundColor = e => {e.target.classList.add('clicked');}
+
+const changeBackgroundColor = e => {e.target.style.backgroundColor = `${color}`;}
 
 function makeGrid(num) {
   box.style.setProperty('--grid-rows', num);
@@ -33,7 +35,7 @@ function resize() {
 
 function clearGrid() {
   let elements = document.querySelectorAll(".grid-element");
-  elements.forEach(element => element.classList.remove('clicked'));
+  elements.forEach(element => element.style.backgroundColor = 'white');
 };
 
 makeGrid(16);
